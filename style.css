@@ -1,0 +1,163 @@
+/* FONT */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+/* VARIABLES */
+:root {
+    --brightorange: hsl(31, 77%, 52%);
+    --darkcyan: hsl(184, 100%, 22%);
+    --verydarkcyan: hsl(179, 100%, 13%);
+    --transparentwhite-pg: hsla(0, 0%, 100%, 0.65);
+    --verylightgray-bghdbtn: hsl(0, 0%, 95%);
+    --fontlexend: 'Lexend Deca', sans-serif;
+    --fontbigshoulders: 'Big Shoulders Display', cursive;
+}
+
+/* GENERAL SETTINGS */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+}
+
+button,
+input,
+textarea,
+select {
+    font: inherit;
+    color: inherit;
+}
+
+img,
+picture,
+svg {
+    display: block;
+    width: 100%;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1;
+    display: grid;
+    align-content: center;
+    /* CUSTOM */
+    font-family: var(--fontlexend);
+    background-color: var(--verylightgray-bghdbtn);
+}
+
+/* CUSTOM SETTINGS */
+
+/* MOBILE-FIRST */
+.cars-card {
+    width: min(88%, 650px);
+    min-width: 250px;
+    margin: auto;
+    border-radius: 0.5em;
+    overflow: hidden;
+    font-size: 0.95rem;
+    font-weight: 500;
+    box-shadow: 0 20px 20px rgba(0, 0, 0, 0.3);
+}
+
+.cars-card .box.sedans {
+    background-color: var(--brightorange);
+}
+
+.cars-card .box.suvs {
+    background-color: var(--darkcyan);
+}
+
+.cars-card .box.luxury {
+    background-color: var(--verydarkcyan);
+}
+
+.cars-card .box {
+    display: grid;
+    gap: 2.4em;
+    padding: 3.1em;
+}
+
+.cars-card .box h2 {
+    text-transform: uppercase;
+    font-family: var(--fontbigshoulders);
+    font-size: 2.4rem;
+    color: var(--verylightgray-bghdbtn);
+}
+
+.cars-card .box p {
+    color: var(--transparentwhite-pg);
+    line-height: 1.65;
+}
+
+.cars-card .box .more {
+    text-decoration: none;
+    padding: 0.9em 2em;
+    border-radius: 2em;
+    background-color: var(--verylightgray-bghdbtn);
+    border: 2px solid var(--verylightgray-bghdbtn);
+    margin-right: auto;
+    cursor: pointer;
+}
+
+.cars-card .box .more:hover {
+    color: var(--verylightgray-bghdbtn) !important;
+    background-color: transparent;
+    transition: 0.3s;
+}
+
+.cars-card .box.sedans .more {
+    color: var(--brightorange);
+}
+
+.cars-card .box.suvs .more {
+    color: var(--darkcyan);
+}
+
+.cars-card .box.luxury .more {
+    color: var(--verydarkcyan);
+}
+
+.sr-only {
+    color: transparent;
+}
+
+/* DESKTOP */
+@media screen and (min-width: 800px) {
+    .cars-card {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        width: min(88%, 920px);
+    }
+
+    .cars-card .box p {
+        margin-bottom: 3em;
+    }
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+    text-decoration: none;
+}
